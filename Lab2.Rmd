@@ -1,0 +1,6 @@
+---
+title: "Lab2"
+author: "Shivani Dave"
+date: "9/9/2020"
+output: html_document
+---
