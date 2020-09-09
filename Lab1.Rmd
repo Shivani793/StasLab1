@@ -4,27 +4,61 @@ author: "Shivani Dave"
 date: "9/9/2020"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#problem 1 Compute the sum of the sequence 100 to 1000, going up by a constant value of 100 (100,200,300,400,500,600,700,800,900,1000).
+```{r}
+sum( seq( 100, 1000,10))
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+#problem 2 Compute the sum of these numbers (1,3,2,4,3,5,4,3,4,5,6,5,6,7,6,5,6,5,4,3,4,5)
+```{r}
+sum(1,3,2,4,3,5,4,3,4,5,6,5,6,7,6,5,6,5,4,3,4,5)
 ```
 
-## Including Plots
+#problem 3 Write a custom sequence generator function using a for loop that generates a sequence from a starting integer value to an ending integer value in steps of 1. Demonstrate that it can produce the sequence 1 to 10.
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+seq_generator <- function(start,end) {for (i in start:end) {print (i) 
+} }
+
+seq_generator(start=1, end=10)
+
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+#problem 4 Write a custom function to implement the following general equation to find the sum of any constant series: 𝑋1+𝑋2+…+𝑋𝑛=(𝑋𝑛−𝑋1𝑐+1)(𝑋1+𝑋𝑛2) Demonstrate that your function correctly produces the sum for the series below:
+```{r}
+sum_of_cseries <- function (X1,Xn,step) {
+ the_sum <- (((Xn-X1)/step)+1)*((X1+Xn)/2)
+ return(the_sum)
+}
+sum_of_cseries(X1=10, Xn=100, step=10)
+``` 
+# problem 5  Write a custom function that generates a constant series between any start and end values, with any constant, and finds the sum. Have your function output both the sequence and the sum. For this problem, feel free to use the existing seq() and sum() functions in your custom function. Demonstrate the function correctly prints out the above sequence (10 to 100 in steps of 10), and its sum.
+
+```{r}
+custom_function <- function(start,end,step){
+the_sequence <- seq(start,end,step)
+the_sum<- sum(the_sequence)
+
+my_output <- list(the_sequence=the_sequence, the_sum=the_sum)
+return(my_output)}
+
+custom_function(10,100,10)
+
+```
+
+#problem 6 Use the sum() and the length() functions to calculate the mean (average) of the numbers x = c(1,2,3,4,5).
+```{r}
+x=c(1,2,3,4,5)
+avgx<-(sum(x)/length(x))
+avgx
+```
+
+
+
+
+
+
