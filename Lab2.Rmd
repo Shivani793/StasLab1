@@ -119,10 +119,11 @@ standard_deviation <-world_happiness_data %>%
 knitr::kable(head(total_mean))
 
 ggplot(total_mean, aes(x = year, y = mean_healthy))+
-  geom_bar(stat="identity") +
-    geom_errorbar(aes(ymin = mean_healthy - sd_healthy
+  geom_bar(stat="identity")+
+  geom_errorbar(aes(ymin = mean_healthy - sd_healthy,
                     ymax = mean_healthy + sd_healthy),
                 width = .25)
+
   
 
 ```
